@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
-
+// ...
 // import ContrasenaRecover from './pages/ContrasenaRecover'
 // import ContrasenaRecover2 from './pages/ContrasenaRecover2'
 import LoginExample from './loginExample';
