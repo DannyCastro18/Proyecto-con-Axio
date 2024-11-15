@@ -5,7 +5,7 @@ function RecoveryPassword() {
     return (
         <>
             <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full fixed inset-x-1/3 z-10">
-                <Link to='/'>
+                <Link to='/LoginExample'>
                     <button className="text-left mb-4 focus:outline-none w-full">
                         <svg
                             className="w-6 h-6 text-black"
@@ -36,15 +36,15 @@ function RecoveryPassword() {
                         <input
                             type="email"
                             id="email"
-                            className="mt-1 block w-full px-3 py-2 border border-gray-300     shadow-sm focus:outline-none sm:text-sm text-center bg-slate-200"
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300  rounded-lg   shadow-sm focus:outline-none sm:text-sm text-center bg-slate-200"
                             placeholder=" chefsito@gmail.com"
                         />
 
                     </div>
-                    <Link to="/recoverPass2">
+                    <Link to="/RecoveryPassword2">
                         <button
                             type="submit"
-                            className=" bg-violet-500 text-white py-3 px-4 w-full hover:bg-violet-800 text-lg mb-2"
+                            className=" bg-violet-500 text-white py-3 px-4 w-full rounded-lg hover:bg-violet-800 text-lg mb-2"
                         >
                             Enviar código
                         </button>
@@ -54,5 +54,7 @@ function RecoveryPassword() {
         </>
     )
 }
+
+
 
 export default RecoveryPassword;
