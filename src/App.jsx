@@ -1,6 +1,5 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
 import LoginExample from './loginExample';
 import SignUpExample from './singUpExample';
 import RecoveryPassword from './recovery';
