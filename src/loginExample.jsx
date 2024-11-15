@@ -2,6 +2,7 @@ import { Route, Routes, Link } from "react-router-dom";
 import PrimaryButton from "./components/PrimaryButton";
 import PlatformsButton from './components/PlatformsButton';
 
+
 const LoginExample = () => {
     return (
         <>
@@ -18,16 +19,16 @@ const LoginExample = () => {
                             <div className=" flex flex-col self-center">
                                 <label className="self-start text-zinc-800" htmlFor="password">Password</label>
                                 <input className="w-96 mb-1 bg-zinc-200 p-2 rounded-lg" type="password" name="password" id="password" placeholder='Password' />
-                                <Link className="text-right text-violet-800 text-xs" to="/recoverPass">Forgot your password?</Link>
+                                <Link className="text-right text-violet-800 text-xs" to="/RecoveryPassword" >Forgot your password?</Link>
 
                             </div>
                             <div>
-                                <PrimaryButton clases="w-96" text="Login" />
+                                <PrimaryButton clases="w-96" text="Login" ruta="/LoginExample"/>
                             </div>
                         </form>
                         <section className="flex text-sm justify-center ">
                             <p className="text-violet-800 mr-36 ">Don't you have an account?</p>
-                            <Link className="text-violet-800" to="/SignUp">Register</Link>
+                            <Link className="text-violet-800" to="/SignUpExample" >Register</Link>
                         </section>
                         <section className="w-96 mt-8 flex flex-col items-center gap-2 mx-auto ">
                             <PlatformsButton icon="fa-brands fa-google" text="Continue with Google" />

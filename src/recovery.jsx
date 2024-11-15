@@ -4,7 +4,7 @@ import { Route, Routes, Link } from "react-router-dom";
 function RecoveryPassword() {
     return (
         <>
-            <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full fixed inset-x-1/3 z-10">
+            <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full inset-x-1/3 z-10 ">
                 <Link to='/LoginExample'>
                     <button className="text-left mb-4 focus:outline-none w-full">
                         <svg
@@ -41,12 +41,12 @@ function RecoveryPassword() {
                         />
 
                     </div>
-                    <Link to="/RecoveryPassword2">
+                    <Link to="/RecoveryPassword2" >
                         <button
                             type="submit"
                             className=" bg-violet-500 text-white py-3 px-4 w-full rounded-lg hover:bg-violet-800 text-lg mb-2"
                         >
-                            Enviar código
+                            Send Code
                         </button>
                     </Link>
                 </form>

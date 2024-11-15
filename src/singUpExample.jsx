@@ -26,12 +26,12 @@ const SignUpExample = () => {
                                 <input className="w-96 mb-2 bg-zinc-200 p-2 rounded-lg" type="password" name="check-password" id="check-password" placeholder='Confirm your Password' />
                             </div>
                             <div>
-                                <PrimaryButton clases="w-96 " text="Registrarse" />
+                                <PrimaryButton clases="w-96 " text="Registrarse" ruta="/SignUpExample" />
                             </div>
                         </form>
                         <section className="flex text-sm justify-center gap-36">
                             <p>Do you already have an account?</p>
-                            <Link className="text-violet-800">Login</Link>
+                            <Link className="text-violet-800" to="/LoginExample">Login</Link>
                         </section>
 
                         {/* Seccion para iniciar sesion con otras plataformas */}
