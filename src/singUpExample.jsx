@@ -16,7 +16,7 @@ const SignUpExample = () => {
         e.preventDefault();
 
         if (password !== checkPassword) {
-            setError("Contraseña denegada.");
+            setError("Incorrect password.");
             return;
         }
 
@@ -28,18 +28,18 @@ const SignUpExample = () => {
             });
             navigate('LoginExample');
         } catch (error) {
-            console.error('Error al registrarse: ', error);
+            console.error('Error to Sign Up: ', error);
             setError('Hubo un problema al registrar tu cuenta. Intenta nuevamente.')
         }
     };
 
     return (
         <>
-            <section className='flex items-center h-screen w-screen fixed z-10'>
-                <section className="bg-white w-full h-full flex justify-center">
-                    <section className="flex flex-col w-2/3 p-12">
-                        <Link className="text-3xl self-start" to="/"><i className="fa-solid fa-angle-left"></i></Link>
-                        <h1 className='text-3xl font-bold'>Sign Up</h1>
+            <section className='flex items-center h-screen w-screen fixed z-10 '>
+                <section className="bg-[url('https://w.wallhaven.cc/full/gp/wallhaven-gpyrmq.jpg')] w-full h-full flex justify-center items-center ">
+                    <section className="flex flex-col p-12 bg-white/20 rounded-lg">
+                        <Link className="text-3xl self-start" to="/"><i className="fa-solid fa-angle-left text-white"></i></Link>
+                        <h1 className='text-3xl font-bold text-white'>Sign Up</h1>
                         <form className="flex flex-col p-4" onSubmit={handleSignUp}>
                             <div className="mt-4 flex flex-col self-center ">
                                 <input className="w-96 bg-zinc-200 p-2 rounded-lg" type="text" name="name" id="name" placeholder='Name' value={name} onChange={(e) => setName(e.target.value)} />
@@ -51,18 +51,18 @@ const SignUpExample = () => {
                                 <input className="w-96 bg-zinc-200 p-2 rounded-lg" type="password" name="password" id="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
                             </div>
                             <div className="mt-2 flex flex-col self-center ">
-                                <input className="w-96 mb-2 bg-zinc-200 p-2 rounded-lg" type="password" name="check-password" id="check-password" placeholder='Confirm your Password' value={checkPassword} onChange={(e) => setCheckPassword(e.target.value)}/>
+                                <input className="w-96 mb-2 bg-zinc-200 p-2 rounded-lg" type="password" name="check-password" id="check-password" placeholder='Confirm your Password' value={checkPassword} onChange={(e) => setCheckPassword(e.target.value)} />
                             </div>
                             {error && <p className="text-violet-500 text-center mt-2">{error}</p>}
                             <div>
-                                <PrimaryButton clases="w-96 " text="Registrarse" ruta="/SignUpExample" />
+                                <PrimaryButton clases="w-96 " text="Sign Up" ruta="/SignUpExample" />
                             </div>
                         </form>
                         <section className="flex text-sm justify-center gap-36">
-                            <p>Do you already have an account?</p>
-                            <Link className="text-violet-800" to="/LoginExample">Login</Link>
+                            <p className="text-white">Do you already have an account?</p>
+                            <Link className="text-white" to="/LoginExample ">Login</Link>
                         </section>
-                        <section className="w-96 mt-8 flex flex-col items-center gap-2 mx-auto">
+                        <section className="w-96 mt-8 flex flex-col items-center gap-2 mx-auto text-white">
                             <PlatformsButton icon="fa-brands fa-google" text="Continue with Google" />
                             <PlatformsButton icon="fa-brands fa-square-facebook" text="Continue with Facebook" />
                             <PlatformsButton icon="fa-brands fa-microsoft" text="Continue with Microsoft" />

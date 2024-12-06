@@ -10,14 +10,14 @@ import Buttons from './Buttons';
 function App() {
   return (
     <Router>
-      <div className="bg-gradient-to-br m-0 from-sky-200 to-white-200 w-screen h-screen flex justify-center items-center">
+      <div className=" m-0 to-white-200 w-screen h-screen flex justify-center items-center bg-[url('https://w.wallhaven.cc/full/gp/wallhaven-gpyrmq.jpg')]">
         <Routes >
           {"/"}
           <Route path="/" element={<Buttons />} />
           <Route path='/LoginExample' element={<LoginExample />} />
           <Route path='/SignUpExample' element={<SignUpExample />} />
           <Route path='/RecoveryPassword' element={<RecoveryPassword />} />
-          <Route path='/RecoveryPassword2' element={<RecoveryPassword2/>} />
+          <Route path='/RecoveryPassword2' element={<RecoveryPassword2 />} />
         </Routes>
       </div>
     </Router>
