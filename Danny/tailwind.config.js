@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors:{
-        'violeta': '#8A4DE6FF',
+        'naranja': '#E14D23',
       },
       fontFamily: {
         'racing': ['"Racing Sans One"', 'cursive'],
