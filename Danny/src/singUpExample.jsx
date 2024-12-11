@@ -36,14 +36,14 @@ const SignUpExample = () => {
             <section className="w-full h-full flex justify-center">
                 <section className="flex flex-col w-50 p-12">
                     <form onSubmit={handleSignUp} className="mt-24 w-50 bg-black/40 flex flex-col p-4">
-                        <h1 className="text-2xl font-bold text-white">Registrarse</h1>
+                        <h1 className="text-2xl font-bold text-white">Sign Up</h1>
                         <div className="mt-4 flex flex-col self-center">
                             <input
                                 className="w-96 bg-zinc-200 p-2 rounded-lg"
                                 type="text"
                                 name="nombre"
                                 id="nombre"
-                                placeholder="Nombres"
+                                placeholder="Name"
                                 value={nombre}
                                 onChange={(e) => setName(e.target.value)}
                             />
@@ -54,7 +54,7 @@ const SignUpExample = () => {
                                 type="text"
                                 name="apellido"
                                 id="apellido"
-                                placeholder="Apellidos"
+                                placeholder="Last Name"
                                 value={apellido}
                                 onChange={(e) => setLastName(e.target.value)}
                             />
@@ -65,7 +65,7 @@ const SignUpExample = () => {
                                 type="email"
                                 name="correo"
                                 id="correo"
-                                placeholder="Correo"
+                                placeholder="Email"
                                 value={correo}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
@@ -76,19 +76,19 @@ const SignUpExample = () => {
                                 type="password"
                                 name="contraseña"
                                 id="contraseña"
-                                placeholder="Contraseña"
+                                placeholder="Password"
                                 value={contraseña}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
                         {error && <p className="text-violet-300 mt-2">{error}</p>}
                         <div>
-                            <PrimaryButton clases="w-96" text="Register"/>
+                            <PrimaryButton clases="w-96" text="Register" />
                         </div>
                         <section className="flex text-sm justify-center gap-36 mb-4 text-white">
                             <p className="mt-5">Do you already have an account?</p>
                             <Link className="text-violet-400 mt-5" to="/loginExample">
-                                Inicia sesión
+                                Login
                             </Link>
                         </section>
                         <section className="w-96 mt-3 flex flex-col items-center gap-2 mx-auto text-white">

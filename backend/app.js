@@ -30,7 +30,7 @@ const authenticateToken = (req, res, next) => {
   }
 };
 
-// Registro de usuario
+
 app.post('/api/register', async (req, res) => {
   const { nombre, apellido, correo, contraseña } = req.body;
   try {
@@ -81,7 +81,7 @@ app.get('/api/users', authenticateToken, async (req, res) => {
     }
     res.json(users);
   } catch (error) {
-    console.error("Error al obtener los usuarios:", error.message);
+    console.error("Error al obtener los usuarios:", error);
     res.status(500).json({ error: "Error al obtener los usuarios", details: error.message });
   }
 });

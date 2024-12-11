@@ -57,7 +57,7 @@ const LoginExample = () => {
                                     type="password"
                                     name="contraseña"
                                     id="contraseña"
-                                    placeholder="Contraseña"
+                                    placeholder="Password"
                                     value={formData.contraseña}
                                     onChange={handleChange}
                                     required
@@ -66,16 +66,16 @@ const LoginExample = () => {
                             <Link className="text-right text-white text-sm self-center mt-4 " to="/RecoveryPassword">Did you forget your password?</Link>
 
                             <article>
-                                <PrimaryButton clases="w-96" text="Iniciar sesión"/>
+                                <PrimaryButton clases="w-96" text="Iniciar sesión" />
                             </article>
                             <section className="flex text-sm justify-center mt-4 mb-4">
-                                <p className="text-white mr-36">Don't you have an account?</p>
-                                <Link className="text-violet-400" to="/SignUpExample">"Sign up"</Link>
+                                <p className="text-white  mr-36">Don't you have an account?</p>
+                                <Link className="text-violet-400" to="/SignUpExample">Sign up</Link>
                             </section>
                             <section className="w-96 mt-3 flex flex-col items-center gap-2 mx-auto text-white">
-                            <PlatformsButton icon="fa-brands fa-google" text="Continue with Google" />
-                            <PlatformsButton icon="fa-brands fa-square-facebook" text="Continue with Facebook" />
-                            <PlatformsButton icon="fa-brands fa-microsoft" text="Continue with Microsoft" />
+                                <PlatformsButton icon="fa-brands fa-google" text="Continue with Google" />
+                                <PlatformsButton icon="fa-brands fa-square-facebook" text="Continue with Facebook" />
+                                <PlatformsButton icon="fa-brands fa-microsoft" text="Continue with Microsoft" />
                             </section>
                         </form>
                     </section>

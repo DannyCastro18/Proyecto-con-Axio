@@ -16,7 +16,7 @@ function RecoveryPassword() {
             const data = await response.json();
             if (response.ok) {
                 alert('Correo de recuperación enviado');
-                navigate('/RecoveryPassword2'); 
+                navigate('/RecoveryPassword2');
             } else {
                 alert(data.error || 'Ocurrió un error al enviar el correo');
             }
@@ -49,17 +49,17 @@ function RecoveryPassword() {
                         </button>
                     </Link>
                     <h1 className="text-3xl font-bold mb-4 text-center text-white">
-                        Recupera contraseña
+                        Recover password
                     </h1>
                     <p className="text-center text-white mb-4">
-                        Introduce el email con el que estás registrado, te enviaremos un código para verificar que eres tú
+                        Enter the email you registered with, and we will send you a code to verify your identity.
                     </p>
 
                     <form onSubmit={handleSubmit}>
                         <div className="mt-4 mb-4">
-                        <label htmlFor="email" className="block text-lg font-medium bg text-white text-left">
-                            Email
-                        </label>
+                            <label htmlFor="email" className="block text-lg font-medium bg text-white text-left">
+                                Email
+                            </label>
                             <input
                                 type="email"
                                 id="email"
@@ -74,7 +74,7 @@ function RecoveryPassword() {
                             type="submit"
                             className="bg-violet-400 text-white py-3 px-4 w-full rounded-lg hover:bg-violet-800 text-lg mb-2"
                         >
-                            Enviar código
+                            Send code
                         </button>
                     </form>
                 </div>
