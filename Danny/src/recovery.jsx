@@ -8,7 +8,7 @@ function RecoveryPassword() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/api/recover-password', {
+            const response = await fetch('http://localhost:3000/api/recover-password', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ correo }),
@@ -16,7 +16,7 @@ function RecoveryPassword() {
             const data = await response.json();
             if (response.ok) {
                 alert('Correo de recuperación enviado');
-                navigate('/RecoveryPassword2'); // Redirigir a la siguiente página
+                navigate('/RecoveryPassword2'); 
             } else {
                 alert(data.error || 'Ocurrió un error al enviar el correo');
             }

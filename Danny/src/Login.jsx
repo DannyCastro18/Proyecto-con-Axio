@@ -17,7 +17,7 @@ const LoginExample = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5000/api/login", formData);
+            const response = await axios.post("http://localhost:3000/api/login", formData);
             setMensaje("Inicio de sesión exitoso");
             localStorage.setItem("token", response.data.token);
 

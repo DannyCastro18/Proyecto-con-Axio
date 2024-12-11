@@ -9,17 +9,13 @@ require('dotenv').config();
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Conexión a MongoDB
 mongoose.connect('mongodb+srv://DannyCastro:1234@cluster0.elfxezh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
   .then(() => console.log('Conexión a MongoDB exitosa'))
   .catch(err => console.error('Error al conectar a MongoDB:', err.message));
 
-
-// Middleware de autenticación
 const authenticateToken = (req, res, next) => {
   const token = req.headers.authorization?.split(" ")[1];
   if (!token) {
@@ -38,8 +34,8 @@ const authenticateToken = (req, res, next) => {
 app.post('/api/register', async (req, res) => {
   const { nombre, apellido, correo, contraseña } = req.body;
   try {
-    const user = new User({ nombre, apellido, correo, contraseña }); // Contraseña sin hashear
-    await user.save(); // El middleware la hashea automáticamente
+    const user = new User({ nombre, apellido, correo, contraseña }); 
+    await user.save(); 
     res.status(201).json({ message: 'Usuario registrado con éxito' });
   } catch (err) {
     if (err.code === 11000) {
@@ -50,8 +46,6 @@ app.post('/api/register', async (req, res) => {
   }
 });
 
-
-// Inicio de sesión
 app.post('/api/login', async (req, res) => {
   const { correo, contraseña } = req.body;
 
@@ -79,8 +73,6 @@ app.post('/api/login', async (req, res) => {
 });
 
 
-
-// Ruta protegida para obtener usuarios
 app.get('/api/users', authenticateToken, async (req, res) => {
   try {
     const users = await User.find();
@@ -94,10 +86,10 @@ app.get('/api/users', authenticateToken, async (req, res) => {
   }
 });
 
-// Editar usuario
+
 app.put('/api/users/:id', authenticateToken, async (req, res) => {
   const { id } = req.params;
-  const { nombre, correo } = req.body; // Campos editables
+  const { nombre, correo } = req.body;              
   try {
     const user = await User.findByIdAndUpdate(id, { nombre, correo }, { new: true });
     if (!user) {
@@ -109,7 +101,7 @@ app.put('/api/users/:id', authenticateToken, async (req, res) => {
   }
 });
 
-// Eliminar usuario
+
 app.delete('/api/users/:id', authenticateToken, async (req, res) => {
   const { id } = req.params;
   try {
@@ -132,11 +124,9 @@ app.post('/api/recover-password', async (req, res) => {
     if (!user) {
       return res.status(404).json({ error: 'Usuario no encontrado' });
     }
-
-    // Generar un token de recuperación
+ 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
-    // Enviar correo electrónico
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -165,18 +155,15 @@ app.post('/api/reset-password/:token', async (req, res) => {
   const { token } = req.params;
   const { nuevaContraseña } = req.body;
   try {
-    // Verificar token
+    
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    // Buscar usuario por ID
     const user = await User.findById(decoded.id);
     if (!user) {
       return res.status(404).json({ error: 'Usuario no encontrado' });
     }
-    // Asignar nueva contraseña (sin hashearla aquí)
     user.contraseña = nuevaContraseña;
 
-    // Guardar usuario (el middleware se encargará de hashearla)
     await user.save();
     res.json({ message: 'Contraseña restablecida con éxito' });
   } catch (error) {
@@ -184,6 +171,5 @@ app.post('/api/reset-password/:token', async (req, res) => {
   }
 });
 
-// Iniciar servidor
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`));

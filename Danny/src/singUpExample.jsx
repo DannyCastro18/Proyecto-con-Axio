@@ -18,7 +18,7 @@ const SignUpExample = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:5000/api/register', {
+            const response = await axios.post('http://localhost:3000/api/register', {
                 nombre,
                 apellido,
                 correo,
@@ -86,7 +86,7 @@ const SignUpExample = () => {
                             <PrimaryButton clases="w-96" text="Register"/>
                         </div>
                         <section className="flex text-sm justify-center gap-36 mb-4 text-white">
-                            <p className="mt-5">¿Ya tienes una cuenta?</p>
+                            <p className="mt-5">Do you already have an account?</p>
                             <Link className="text-violet-400 mt-5" to="/loginExample">
                                 Inicia sesión
                             </Link>

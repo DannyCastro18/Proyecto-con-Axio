@@ -8,7 +8,6 @@ const UserSchema = new mongoose.Schema({
   contraseña: { type: String, required: true },
 });
 
-// Middleware para hashear contraseña antes de guardar
 UserSchema.pre('save', async function (next) {
   if (!this.isModified('contraseña')) {
     return next();
@@ -22,7 +21,6 @@ UserSchema.pre('save', async function (next) {
   }
 });
 
-// Método para comparar contraseñas
 UserSchema.methods.comparePassword = async function (candidatePassword) {
   return await bcrypt.compare(candidatePassword, this.contraseña);
 };
